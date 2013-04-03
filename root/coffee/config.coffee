@@ -1,0 +1,26 @@
+require.config
+	deps:['main']
+	paths:
+		"jquery":"../libs/jquery/1.9.1/jquery"
+		"underscore":"../libs/underscore/1.4.4/underscore"
+		"backbone":"../libs/backbone/0.9.10/backbone"
+		"bootstrap":"../libs/bootstrap/2.3.1/docs/assets/js/bootstrap"
+		"text":"../libs/requirejs/plugins/text"
+		"domReady":"../libs/requirejs/plugins/domReady"
+		"modernizr":"../libs/modernizr/2.6.2/modernizr"
+		"sidr":"../libs/sidr/1.1.1/jquery.sidr.min"
+		"templates":"../tpl"
+		"css":"../libs/requirejs/plugins/css"
+		"root":"../"
+		"libs":"../libs"
+	shim:
+		'backbone':
+			deps:['jquery','underscore']
+			exports:'Backbone'
+		'underscore':
+			exports:'_'
+		'bootstrap':
+			deps:['jquery']
+		'sidr':
+			deps:['jquery']
+			

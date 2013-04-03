@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh_CN"> <!--<![endif]-->
+<head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>前端集成框架练习</title>
+	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="Bookmark" href="favicon.ico">
+	<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<link rel="stylesheet" href="css/font-awesome.css">
+  	<!--[if IE 7]>
+    <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+    <![endif]-->
+
+     <style type = "text/css">
+        #loading-container {position: absolute; top:50%; left:50%;}
+        #loading-content {width:800px; text-align:center; margin-left: -400px; height:50px; margin-top:-25px; line-height: 50px;}
+        #loading-content {font-family: "Helvetica", "Arial", sans-serif; font-size: 18px; color: black; text-shadow: 0px 1px 0px white; }
+        #loading-content i {margin-right: 0.2em; margin-top:3px;}
+        #loading {background-color:#abc4ff; background-image: -moz-radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); background-image: -webkit-radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); background-image: -o-radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); background-image: -ms-radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); background-image: radial-gradient(50% 50%, ellipse closest-side, #abc4ff, #87a7ff 100%); height:100%; width:100%; overflow:hidden; position: absolute; left: 0; top: 0; z-index: 99999;}
+    </style>
+</head>
+<body style="overflow: hidden;">
+	<div id="loading">
+ 	  <!-- loading -->
+    <script type = "text/javascript">
+        document.write("<div id='loading-container'><p id='loading-content'>" +
+                "<i class='icon-spinner icon-spin'></i> " +
+                "Loading...</p></div>");
+    </script> 
+	</div>
+	
+
+	<script data-main="js/config"  src="libs/requirejs/2.1.5/require.js"></script>
+	 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+     <script>
+        
+     </script>
+</body>
+</html>
