@@ -33,9 +33,9 @@ module.exports = (grunt)->
 		less_dir: 'less'
 		less_src: 'css/**/*.less'
 		less_file: 
-			"build/css/bootstrap.css" : "#{LIBS_PATH}/bootstrap/2.3.1/less/bootstrap.less"
-			"build/css/font-awesome.css":"#{LIBS_PATH}/font-awesome/3.0.2/less/font-awesome.less"
-			"build/css/font-awesome-ie7.min.css":"#{LIBS_PATH}/font-awesome/3.0.2/less/font-awesome-ie7.less"				
+			"build/css/bootstrap.css" : "#{LIBS_PATH}/bootstrap/default/less/bootstrap.less"
+			"build/css/font-awesome.css":"#{LIBS_PATH}/font-awesome/default/less/font-awesome.less"
+			"build/css/font-awesome-ie7.min.css":"#{LIBS_PATH}/font-awesome/default/less/font-awesome-ie7.less"				
 
 		# -- compiled output --
 
@@ -73,23 +73,141 @@ module.exports = (grunt)->
 
 		# copy Task
 		copy:
-			awesome:
+			jquery:
 				files:[
 					expand: true
-					cwd: 'build/libs/font-awesome/3.0.2/'
-					src: "font/**"
-					dest: 'build/'
+					cwd: "#{ASSETS_LIBS}/jquery"
+					src: "jquery.js"
+					dest: "#{LIBS_PATH}/jquery/default"
 				]
-			bootstrap:
+			underscore:
 				files:[
 					expand: true
-					cwd: 'build/libs/bootstrap/2.3.1/'
-					src: "img/**"
-					dest: 'build/'
+					cwd: "#{ASSETS_LIBS}/underscore"
+					src: "underscore.js"
+					dest: "#{LIBS_PATH}/underscore/default"
 				]
-					
-					
+			backbone:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/backbone"
+					src: "backbone.js"
+					dest: "#{LIBS_PATH}/backbone/default"
+				]
 
+			font_awesome:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/font-awesome"
+					src: [
+						"font/**"
+						"less/**"
+					]
+					dest: "#{LIBS_PATH}/font-awesome/default"
+				]
+			font:
+				files:[
+					expand: true
+					cwd: "#{LIBS_PATH}/font-awesome/default"
+					src: "font/**"
+					dest: "#{BUILD_PATH}"
+				]
+			bootstrap_js:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/bootstrap/docs/assets"
+					src: [
+						"js/**"
+					]
+					dest: "#{LIBS_PATH}/bootstrap/default"
+				]
+		
+			bootstrap_less:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/bootstrap"
+					src: [
+						"less/**"
+						"img/**"
+					]
+					dest: "#{LIBS_PATH}/bootstrap/default"
+				]
+			img:
+				files:[
+					expand: true
+					cwd: "#{LIBS_PATH}/bootstrap/default"
+					src: [
+						"img/**"
+					]
+					dest: "#{BUILD_PATH}"
+				]
+			animate:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/animate"
+					src: "**/*.css"
+					dest: "#{LIBS_PATH}/animate/default"
+				]
+			modernizr:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/modernizr/dist"
+					src: "modernizr-build.js"
+					dest: "#{LIBS_PATH}/modernizr/default"
+				]
+			normalize:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/normalize"
+					src: "normalize.css"
+					dest: "#{LIBS_PATH}/normalize/default"
+				]
+			requirejs:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/requirejs"
+					src: "require.js"
+					dest: "#{LIBS_PATH}/requirejs/default"
+				]
+			requirejs_plugins:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/requirejs-plugins"
+					src: [
+						"**/cs.js"
+						"**/css.js"
+						"**/domReady.js"
+						"**/i18n.js"
+						"**/text.js"
+					]
+					dest: "#{LIBS_PATH}/requirejs/plugins"
+				]
+			social:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/social"
+					src: "assets/**"
+					dest: "#{LIBS_PATH}/social/default"
+				]
+			sidr:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/sidr/dist"
+					src: "**"
+					dest: "#{LIBS_PATH}/sidr/default"
+				]
+			fractionslider:
+				files:[
+					expand: true
+					cwd: "#{ASSETS_LIBS}/fractionslider"
+					src: [
+						"jquery.fractionslider.js"
+						"css/**"
+					]
+					dest: "#{LIBS_PATH}/fractionslider/default"
+				]
+
+	
 		# uglify Task
 		uglify:
 			options:
@@ -105,7 +223,9 @@ module.exports = (grunt)->
 					bare: true
 				expand: true		       
 				cwd: app_paths.coffee_dir
-				src: [app_paths.coffee_src]
+				src: [
+					app_paths.coffee_src
+				]
 				dest: app_paths.coffee_dest
 				ext: '.js'
 
@@ -160,6 +280,20 @@ module.exports = (grunt)->
 					port:9001
 					base:'./test'
 
+		concat: 
+			options:
+			    stripBanners: true
+			    banner: '<%= grunt.banner %>'
+
+			dist:
+				src: [ "#{LIBS_PATH}/modernizr/default/modernizr-build.js"]
+				dest: "#{LIBS_PATH}/modernizr/default/modernizr.js"	
+			bootstrap:
+				src: [ "#{LIBS_PATH}/bootstrap/default/js/bootstrap.js"]
+				dest: "#{LIBS_PATH}/bootstrap/default/bootstrap.js"
+				
+		      			
+
 
 				
 		      
@@ -182,7 +316,8 @@ module.exports = (grunt)->
 	# register default Task
 	grunt.registerTask 'default', [
 		'clean'
-		'copy'
+		'copy:*'
+		'concat'
 		'coffee'
 		'less'
 	]

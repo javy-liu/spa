@@ -10,9 +10,6 @@
 [submodule "root/assets/libs/font-awesome"]
 	path = root/assets/libs/font-awesome
 	url = git://github.com/FortAwesome/Font-Awesome.git
-[submodule "root/assets/libs/jquery"]
-	path = root/assets/libs/jquery
-	url = git://github.com/jquery/jquery.git
 [submodule "root/assets/libs/modernizr"]
 	path = root/assets/libs/modernizr
 	url = git://github.com/Modernizr/Modernizr.git
