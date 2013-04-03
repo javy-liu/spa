@@ -34,3 +34,18 @@
 [submodule "root/assets/libs/fractionslider"]
 	path = root/assets/libs/fractionslider
 	url = git://github.com/jacksbox/jquery.fractionslider.git
+[submodule "root/assets/libs/requirejs-plugins/text"]
+	path = root/assets/libs/requirejs-plugins/text
+	url = git://github.com/requirejs/text.git
+[submodule "root/assets/libs/requirejs-plugins/domReady"]
+	path = root/assets/libs/requirejs-plugins/domReady
+	url = git://github.com/requirejs/domReady.git
+[submodule "root/assets/libs/requirejs-plugins/i18n"]
+	path = root/assets/libs/requirejs-plugins/i18n
+	url = git://github.com/requirejs/i18n.git
+[submodule "root/assets/libs/requirejs-plugins/cs"]
+	path = root/assets/libs/requirejs-plugins/cs
+	url = git://github.com/jrburke/require-cs.git
+[submodule "root/assets/libs/requirejs-plugins/css"]
+	path = root/assets/libs/requirejs-plugins/css
+	url = git://github.com/VIISON/RequireCSS.git

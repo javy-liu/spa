@@ -59,7 +59,7 @@ exports.template = function(grunt, init, done) {
     init.addLicenseFiles(files, props.licenses);
 
     // Actually copy (and process) files.
-    init.copyAndProcess(files, props, {noProcess: 'build/**'});
+    init.copyAndProcess(files, props, {noProcess: ['build/**','assets/**']});
 
     // Generate package.json file, used by npm and grunt.
     init.writePackageJSON('package.json', {
