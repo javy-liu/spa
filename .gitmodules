@@ -16,9 +16,6 @@
 [submodule "root/assets/libs/normalize"]
 	path = root/assets/libs/normalize
 	url = git://github.com/necolas/normalize.css.git
-[submodule "root/assets/libs/requirejs"]
-	path = root/assets/libs/requirejs
-	url = git://github.com/jrburke/requirejs.git
 [submodule "root/assets/libs/underscore"]
 	path = root/assets/libs/underscore
 	url = git://github.com/documentcloud/underscore.git
@@ -46,3 +43,6 @@
 [submodule "root/assets/libs/requirejs-plugins/css"]
 	path = root/assets/libs/requirejs-plugins/css
 	url = git://github.com/VIISON/RequireCSS.git
+[submodule "root/assets/libs/requirejs"]
+	path = root/assets/libs/requirejs
+	url = git://github.com/jrburke/requirejs.git
