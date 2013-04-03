@@ -18,6 +18,8 @@ module.exports = (grunt)->
 	CSS_DEV_PATH = "#{ BUILD_PATH }/css"
 	TEST_PATH = "test"
 	LIBS_PATH = "#{BUILD_PATH}/libs"
+	ASSETS_PATH = "assets"
+	ASSETS_LIBS = "#{ASSETS_PATH}/libs"
 
 	# paths setup - separate as some modules dont process templates correctly
 	app_paths = 

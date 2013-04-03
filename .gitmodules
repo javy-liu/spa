@@ -1,0 +1,36 @@
+[submodule "root/assets/libs/animate"]
+	path = root/assets/libs/animate
+	url = git://github.com/daneden/animate.css.git
+[submodule "root/assets/libs/backbone"]
+	path = root/assets/libs/backbone
+	url = git://github.com/documentcloud/backbone.git
+[submodule "root/assets/libs/bootstrap"]
+	path = root/assets/libs/bootstrap
+	url = git://github.com/twitter/bootstrap.git
+[submodule "root/assets/libs/font-awesome"]
+	path = root/assets/libs/font-awesome
+	url = git://github.com/FortAwesome/Font-Awesome.git
+[submodule "root/assets/libs/jquery"]
+	path = root/assets/libs/jquery
+	url = git://github.com/jquery/jquery.git
+[submodule "root/assets/libs/modernizr"]
+	path = root/assets/libs/modernizr
+	url = git://github.com/Modernizr/Modernizr.git
+[submodule "root/assets/libs/normalize"]
+	path = root/assets/libs/normalize
+	url = git://github.com/necolas/normalize.css.git
+[submodule "root/assets/libs/requirejs"]
+	path = root/assets/libs/requirejs
+	url = git://github.com/jrburke/requirejs.git
+[submodule "root/assets/libs/underscore"]
+	path = root/assets/libs/underscore
+	url = git://github.com/documentcloud/underscore.git
+[submodule "root/assets/libs/sidr"]
+	path = root/assets/libs/sidr
+	url = git://github.com/artberri/sidr.git
+[submodule "root/assets/libs/social"]
+	path = root/assets/libs/social
+	url = git://github.com/tolgaergin/social.git
+[submodule "root/assets/libs/fractionslider"]
+	path = root/assets/libs/fractionslider
+	url = git://github.com/jacksbox/jquery.fractionslider.git
